@@ -5,6 +5,7 @@ services:
     image: 'clickhouse/clickhouse-server'
     user: '101:101'
     container_name: clickhouse
+    privileged: true #unsecure
     hostname: clickhouse
     volumes:
       - ./fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
@@ -20,6 +21,7 @@ services:
     user: '101:101'
     container_name: clickhouse-keeper
     hostname: clickhouse-keeper
+    privileged: true #unsecure
     volumes:
       - ./fs/volumes/clickhouse-keeper/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
