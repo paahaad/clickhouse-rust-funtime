@@ -40,9 +40,9 @@ impl ClickhouseConnection {
         self.client.query(&format!(r#"
             CREATE TABLE IF NOT EXISTS {db_name}.transactions (
                signature String,
-               slot Uint64,
+               slot UInt64,
                success Bool,
-               fee Uint64,
+               fee UInt64,
                block_time DateTime64(3),
                program_id String,
                instructions Array(String) 
